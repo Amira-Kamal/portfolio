@@ -7,478 +7,1156 @@
 
     <title>Amira Kamal | Software Developer</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Background Effects -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
+
     <!-- ================= NAVBAR ================= -->
 
-    <header>
+    <header class="header">
+
         <nav class="navbar">
 
-            <a href="#home" class="logo">Amira<span>.</span></a>
+            <a href="#home" class="logo">
+                Amira<span>.</span>
+            </a>
 
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#training">Training</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#home" class="active">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#training">Training</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#certificates">Certificates</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
 
-            <div class="menu-icon">
+            <button class="menu-icon" aria-label="Open menu">
                 <i class="fa-solid fa-bars"></i>
-            </div>
+            </button>
 
         </nav>
+
     </header>
 
 
     <!-- ================= HOME ================= -->
-<section id="home" class="hero">
 
-    <div class="hero-container">
+    <main>
 
-        <div class="hero-content">
+        <section id="home" class="hero">
 
-            <p class="small-title">Hello, I'm</p>
+            <div class="hero-container">
 
-            <h1 class="animated-name">
-                <span>Amira</span>
-                <span>Kamal</span>
-            </h1>
+                <div class="hero-content reveal">
 
-            <h2 class="animated-title">
-                IT Student & <span>Software Developer</span>
-            </h2>
+                    <div class="hero-badge">
+                        <span class="status-dot"></span>
+                        Available for opportunities
+                    </div>
 
-            <p class="hero-text">
-                I'm an Information Technology student passionate about
-                software and web development. Currently building my skills
-                through ITI and DEPI training programs.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="btn primary-btn">
-                    View My Work
-                </a>
-
-                <a href="#contact" class="btn secondary-btn">
-                    Contact Me
-                </a>
-
-            </div>
-
-            <div class="social-links">
-
-                <a href="https://www.linkedin.com/in/amira-kamall"
-                    target="_blank">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-
-                <a href="mailto:m7264102@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-image">
-
-            <img src="WhatsApp Image 2026-08-30 at 12.14.20 PM.jpeg" alt="Amira Kamal">
-
-        </div>
-
-    </div>
-
-</section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about" class="section">
-
-        <div class="section-title">
-            <p>Get To Know Me</p>
-            <h2>About Me</h2>
-        </div>
-
-        <div class="about-container">
-
-            <div class="about-text">
-
-                <h3>I'm Amira, an IT Student.</h3>
-
-                <p>
-                    I'm currently studying Information Technology at
-                    Damietta University. I'm interested in software
-                    development and web technologies and always looking
-                    for opportunities to improve my technical skills.
-                </p>
-
-                <p>
-                    I'm currently participating in ITI's Web Development
-                    using .NET training and DEPI's React Front-End
-                    training, where I'm gaining practical experience
-                    through hands-on projects.
-                </p>
-
-                <a href="#contact" class="btn primary-btn">
-                    Let's Connect
-                </a>
-
-            </div>
-
-            <div class="about-info">
-
-                <div class="info-box">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <h4>Education</h4>
-                    <p>Damietta University</p>
-                </div>
-
-                <div class="info-box">
-                    <i class="fa-solid fa-code"></i>
-                    <h4>Focus</h4>
-                    <p>Software & Web Development</p>
-                </div>
-
-                <div class="info-box">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h4>Location</h4>
-                    <p>Damietta, Egypt</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills" class="section skills-section">
-
-        <div class="section-title">
-            <p>What I Work With</p>
-            <h2>Technical Skills</h2>
-        </div>
-
-        <div class="skills-container">
-
-            <div class="skill-card">
-                <i class="fa-brands fa-html5"></i>
-                <h3>HTML</h3>
-                <p>Web Structure</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-brands fa-css3-alt"></i>
-                <h3>CSS</h3>
-                <p>Styling & Layout</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-brands fa-js"></i>
-                <h3>JavaScript</h3>
-                <p>Web Interactivity</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-brands fa-react"></i>
-                <h3>React</h3>
-                <p>Front-End Development</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-code"></i>
-                <h3>C#</h3>
-                <p>Programming</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-globe"></i>
-                <h3>ASP.NET Core MVC</h3>
-                <p>Web Development</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-database"></i>
-                <h3>SQL Server</h3>
-                <p>Database</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-brands fa-python"></i>
-                <h3>Python</h3>
-                <p>Programming</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-brands fa-git-alt"></i>
-                <h3>Git & GitHub</h3>
-                <p>Version Control</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-brands fa-bootstrap"></i>
-                <h3>Bootstrap</h3>
-                <p>Responsive Design</p>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-layer-group"></i>
-                <h3>Entity Framework Core</h3>
-                <p>Data Access</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= TRAINING ================= -->
-
-    <section id="training" class="section">
-
-        <div class="section-title">
-            <p>My Learning Journey</p>
-            <h2>Training</h2>
-        </div>
-
-        <div class="training-container">
-
-            <div class="training-card">
-
-                <div class="training-icon">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-
-                <div class="training-content">
-
-                    <span>August 2026 - Present</span>
-
-                    <h3>Information Technology Institute (ITI)</h3>
-
-                    <h4>Web Development using .NET</h4>
-
-                    <p>
-                        Currently developing practical skills in
-                        ASP.NET Core MVC, C#, Entity Framework Core,
-                        SQL Server and web development.
+                    <p class="hero-small">
+                        Hello, I'm
                     </p>
 
-                </div>
+                    <h1 class="hero-name">
+                        Amira <span>Kamal</span>
+                    </h1>
 
-            </div>
+                    <h2 class="hero-title">
+                        Front-End Developer &amp;
+                        <span>Software Developer</span>
+                    </h2>
 
-
-            <div class="training-card">
-
-                <div class="training-icon">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-
-                <div class="training-content">
-
-                    <span>July 2026 - Present</span>
-
-                    <h3>Digital Egypt Pioneers Initiative (DEPI)</h3>
-
-                    <h4>React Front-End Web Development</h4>
-
-                    <p>
-                        Currently learning and practicing front-end
-                        development using React, JavaScript, HTML,
-                        CSS and Bootstrap.
+                    <p class="hero-description">
+                        I’m a Front-End Developer who doesn’t just build websites — 
+                        I build them with quality in mind. I combine creativity, clean design,
+                         and modern web technologies to create responsive, user-friendly experiences, 
+                         while paying attention to every detail to deliver work that is polished, reliable, and made to last.
                     </p>
 
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore My Work</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="#contact" class="btn btn-secondary">
+                            Let's Connect
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-socials">
+
+                        <a href="https://www.linkedin.com/in/amira-kamall"
+                            target="_blank"
+                            aria-label="LinkedIn">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+                        <a href="mailto:m7264102@gmail.com"
+                            aria-label="Email">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </a>
+
+                    </div>
+
                 </div>
 
-            </div>
 
-        </div>
+                <!-- HERO IMAGE -->
 
-    </section>
+                <div class="hero-visual reveal">
+
+                    <div class="hero-image-wrapper">
+
+                        <div class="image-glow"></div>
+
+                        <div class="hero-image-ring">
+
+                            <div class="hero-image">
+
+                                <img src="images/WhatsApp Image 2026-08-30 at 12.14.20 PM.jpeg"
+                                    alt="Amira Kamal">
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
 
-    <!-- ================= PROJECTS ================= -->
+                    <div class="floating-card card-one">
 
-    <section id="projects" class="section projects-section">
+                        <i class="fa-solid fa-code"></i>
 
-        <div class="section-title">
-            <p>Some of My Work</p>
-            <h2>Projects</h2>
-        </div>
+                        <div>
+                            <strong>Web Development</strong>
+                            <span>Building & Learning</span>
+                        </div>
 
-        <div class="projects-container">
+                    </div>
 
-            <div class="project-card">
 
-                <div class="project-icon">
-                    <i class="fa-solid fa-book"></i>
-                </div>
+                    <div class="floating-card card-two">
 
-                <div class="project-content">
+                        <i class="fa-solid fa-layer-group"></i>
 
-                    <span class="project-status">
-                        Ongoing Team Project
-                    </span>
+                        <div>
+                            <strong>Software</strong>
+                            <span>Problem Solving</span>
+                        </div>
 
-                    <h3>Library System</h3>
-
-                    <p>
-                        A library management system designed to manage
-                        books and borrowing operations.
-                    </p>
-
-                    <div class="project-tech">
-                        <span>ASP.NET Core MVC</span>
-                        <span>EF Core</span>
-                        <span>C#</span>
-                        <span>SQL Server</span>
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
 
-    </section>
+            <div class="scroll-indicator">
 
+                <span>Scroll to explore</span>
 
-    <!-- ================= SOFT SKILLS ================= -->
+                <i class="fa-solid fa-arrow-down"></i>
 
-    <section class="section">
-
-        <div class="section-title">
-            <p>My Strengths</p>
-            <h2>Soft Skills</h2>
-        </div>
-
-        <div class="soft-skills">
-
-            <div>
-                <i class="fa-solid fa-check"></i>
-                <span>Responsibility</span>
             </div>
 
-            <div>
-                <i class="fa-solid fa-check"></i>
-                <span>Time Management</span>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-check"></i>
-                <span>Fast Learning</span>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-check"></i>
-                <span>Adaptability</span>
-            </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- ================= CONTACT ================= -->
+        <!-- ================= ABOUT ================= -->
 
-    <section id="contact" class="section contact-section">
+        <section id="about" class="section">
 
-        <div class="section-title">
-            <p>Have a Question?</p>
-            <h2>Contact Me</h2>
-        </div>
+            <div class="section-heading reveal">
 
-        <div class="contact-container">
+                <span class="section-label">
+                    GET TO KNOW ME
+                </span>
 
-            <div class="contact-info">
-
-                <h3>Let's Talk</h3>
+                <h2>
+                    About <span>Me</span>
+                </h2>
 
                 <p>
-                    I'm always open to learning opportunities,
-                    collaborations and new experiences.
+                    A little about my journey, interests and what I'm building.
                 </p>
-
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:m7264102@gmail.com">
-                        m7264102@gmail.com
-                    </a>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>01552022177</span>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Damietta, Egypt</span>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/amira-kamall"
-                        target="_blank">
-                        LinkedIn
-                    </a>
-                </div>
 
             </div>
 
 
-            <form class="contact-form" id="contactForm">
+            <div class="about-container">
 
-                <input type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required>
+                <div class="about-content reveal">
 
-                <input type="email"
-                    id="email"
-                    placeholder="Your Email"
-                    required>
+                    <div class="about-tag">
+                        <i class="fa-solid fa-user"></i>
+                        Who I Am
+                    </div>
 
-                <textarea id="message"
-                    placeholder="Your Message"
-                    required></textarea>
+                    <h3>
+                        Turning curiosity into
+                        <span>real projects.</span>
+                    </h3>
 
-                <button type="submit" class="btn primary-btn">
-                    Send Message
-                </button>
+                    <p>
+                        I'm an Information Technology student at Damietta
+                        University with a strong interest in software and
+                        web development.
+                    </p>
 
-            </form>
+                    <p>
+                        I'm currently developing my skills through practical
+                        training with ITI and DEPI, working with technologies
+                        such as C#, ASP.NET Core, JavaScript, React,
+                        SQL Server and more.
+                    </p>
 
+                    <p>
+                        I enjoy learning new technologies, solving problems
+                        and turning ideas into functional and user-friendly
+                        digital experiences.
+                    </p>
+
+
+                    <a href="#contact" class="text-link">
+                        Let's work together
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="about-cards reveal">
+
+                    <div class="about-card">
+
+                        <div class="about-card-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <div>
+                            <span>Education</span>
+                            <h4>Damietta University</h4>
+                            <p>Information Technology</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-card">
+
+                        <div class="about-card-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+
+                        <div>
+                            <span>Focus</span>
+                            <h4>Software Development</h4>
+                            <p>Web &amp; Software Technologies</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-card">
+
+                        <div class="about-card-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <span>Based in</span>
+                            <h4>Damietta, Egypt</h4>
+                            <p>Open to remote opportunities</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+
+        <section id="skills" class="section skills-section">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    MY TOOLKIT
+                </span>
+
+                <h2>
+                    Technical <span>Skills</span>
+                </h2>
+
+                <p>
+                    Technologies and tools I'm currently working with.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+
+                    <h3>HTML</h3>
+                    <p>Semantic Structure</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+
+                    <h3>CSS</h3>
+                    <p>Responsive Design</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+
+                    <h3>JavaScript</h3>
+                    <p>Web Interactivity</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+
+                    <h3>React</h3>
+                    <p>Front-End Development</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <h3>C#</h3>
+                    <p>Programming</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <h3>ASP.NET Core</h3>
+                    <p>MVC Web Development</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <h3>SQL Server</h3>
+                    <p>Database Management</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-bootstrap"></i>
+                    </div>
+
+                    <h3>Bootstrap</h3>
+                    <p>UI &amp; Responsive Layout</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <h3>Entity Framework</h3>
+                    <p>Data Access</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
+
+                    <h3>Git &amp; GitHub</h3>
+                    <p>Version Control</p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+
+                    <h3>Python</h3>
+                    <p>Programming</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRAINING ================= -->
+
+        <section id="training" class="section">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    MY LEARNING JOURNEY
+                </span>
+
+                <h2>
+                    Training &amp; <span>Experience</span>
+                </h2>
+
+                <p>
+                    Practical learning experiences that are shaping my career.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- ITI -->
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-top">
+
+                            <span class="timeline-date">
+                                August 2026 — Present
+                            </span>
+
+                            <span class="timeline-status">
+                                Done
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Information Technology Institute
+                        </h3>
+
+                        <h4>
+                            Web Development using .NET
+                        </h4>
+
+                        <p>
+                            Developing practical skills in C#, ASP.NET Core
+                            MVC, Entity Framework Core, SQL Server and modern
+                            web development through hands-on projects.
+                        </p>
+
+                        <div class="timeline-tags">
+
+                            <span>C#</span>
+                            <span>ASP.NET Core</span>
+                            <span>EF Core</span>
+                            <span>SQL Server</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DEPI -->
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-top">
+
+                            <span class="timeline-date">
+                                July 2026 — Present
+                            </span>
+
+                            <span class="timeline-status">
+                                In Progress
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Digital Egypt Pioneers Initiative
+                        </h3>
+
+                        <h4>
+                            React Front-End Web Development
+                        </h4>
+
+                        <p>
+                            Learning and practicing modern front-end
+                            development using React, JavaScript, HTML,
+                            CSS and Bootstrap through practical projects.
+                        </p>
+
+                        <div class="timeline-tags">
+
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section id="projects" class="section projects-section">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    SELECTED WORK
+                </span>
+
+                <h2>
+                    Featured <span>Projects</span>
+                </h2>
+
+                <p>
+                    A selection of projects I've worked on while learning
+                    and building real-world solutions.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- ================= LIBRARY PROJECT ================= -->
+
+                <article class="project-card featured-project reveal">
+
+                    <div class="project-image">
+
+                        <!-- Replace these images with your project images -->
+
+                        <img src="images/Screenshot 2026-10-01 224101.png"
+                            alt="Library System Project">
+
+                        <div class="project-image-overlay">
+
+                            <button class="image-view-btn"
+                                data-image="images/Screenshot 2026-10-01 224101.png"
+                                aria-label="View project image">
+
+                                <i class="fa-solid fa-expand"></i>
+
+                            </button>
+
+                        </div>
+
+                        <span class="project-badge">
+                            Completed Project
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-body">
+
+                        <div class="project-number">
+                            01
+                        </div>
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                Web Application
+                            </span>
+
+                            <h3>
+                                Library Management System
+                            </h3>
+
+                            <p>
+                                A web-based library management system for
+                                managing books, authors, categories,
+                                availability and borrowing operations.
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                <span>C#</span>
+                                <span>ASP.NET Core MVC</span>
+                                <span>EF Core</span>
+                                <span>SQL Server</span>
+                                <span>Identity</span>
+
+                            </div>
+
+
+                            <div class="project-actions">
+
+                                <!-- Add your real links here -->
+
+                                <a href="#"
+                                    class="project-link disabled-link">
+
+                                    View Project
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                </a>
+
+                                <button class="project-gallery-btn"
+                                    data-gallery="library">
+
+                                    <i class="fa-solid fa-images"></i>
+                                    Gallery
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ================= PROJECT PLACEHOLDER ================= -->
+
+                <article class="project-card project-placeholder reveal">
+
+                    <div class="placeholder-content">
+
+                        <div class="placeholder-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+
+                        <span>More Projects</span>
+
+                        <h3>
+                            New project coming soon
+                        </h3>
+
+                        <p>
+                            More projects and practical work will be added
+                            as I continue my learning journey.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CERTIFICATES ================= -->
+
+        <section id="certificates" class="section certificates-section">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    ACHIEVEMENTS
+                </span>
+
+                <h2>
+                    Certificates &amp; <span>Credentials</span>
+                </h2>
+
+                <p>
+                    Training certificates and learning milestones.
+                </p>
+
+            </div>
+
+
+            <div class="certificates-grid">
+
+
+                <!-- CERTIFICATE 01 -->
+
+                <article class="certificate-card reveal">
+
+                    <div class="certificate-image">
+
+                        <!-- Replace with your certificate image -->
+
+                        <img src="images/WhatsApp Image 2026-10-01 at 11.16.24 PM.jpeg"
+                            alt="ITI Certificate">
+
+                        <button class="certificate-view"
+                            data-image="images/WhatsApp Image 2026-10-01 at 11.16.24 PM.jpeg"
+                            aria-label="View certificate">
+
+                            <i class="fa-solid fa-expand"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span>
+                            2026
+                        </span>
+
+                        <h3>
+                            ITI — Web Development using .NET
+                        </h3>
+
+                        <p>
+                            Information Technology Institute
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CERTIFICATE 02 -->
+
+                <article class="certificate-card reveal">
+
+                    <div class="certificate-image">
+
+                        <!-- Replace with your certificate image -->
+
+                        <img src="images/Screenshot 2026-10-01 232640.png"
+                            alt="English Certificate">
+
+                        <button class="certificate-view"
+                            data-image="images/Screenshot 2026-10-01 232640.png"
+                            aria-label="View certificate">
+
+                            <i class="fa-solid fa-expand"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span>
+                            2026
+                        </span>
+
+                        <h3>
+                            English Course
+                        </h3>
+
+                        <p>
+                            Unix Academy
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CERTIFICATE 03 -->
+
+                <article class="certificate-card certificate-empty reveal">
+
+                    <div class="empty-certificate">
+
+                        <i class="fa-solid fa-certificate"></i>
+
+                        <span>
+                            Add Certificate
+                        </span>
+
+                        <p>
+                            More credentials can be added here.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SOFT SKILLS ================= -->
+
+        <section class="section soft-section">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    BEYOND TECHNICAL SKILLS
+                </span>
+
+                <h2>
+                    Soft <span>Skills</span>
+                </h2>
+
+            </div>
+
+
+            <div class="soft-skills-grid">
+
+                <div class="soft-skill reveal">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Responsibility</span>
+                </div>
+
+                <div class="soft-skill reveal">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Time Management</span>
+                </div>
+
+                <div class="soft-skill reveal">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Fast Learning</span>
+                </div>
+
+                <div class="soft-skill reveal">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <span>Adaptability</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact" class="section contact-section">
+
+            <div class="contact-box reveal">
+
+                <div class="contact-content">
+
+                    <span class="section-label">
+                        LET'S CONNECT
+                    </span>
+
+                    <h2>
+                        Have a project or
+                        <span>opportunity?</span>
+                    </h2>
+
+                    <p>
+                        I'm always open to learning opportunities,
+                        collaborations and interesting projects.
+                    </p>
+
+
+                    <div class="contact-details">
+
+                        <a href="mailto:m7264102@gmail.com"
+                            class="contact-detail">
+
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+
+                            <div>
+                                <span>Email</span>
+                                <strong>m7264102@gmail.com</strong>
+                            </div>
+
+                        </a>
+
+
+                        <div class="contact-detail">
+
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+
+                            <div>
+                                <span>Phone</span>
+                                <strong>01552022177</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-detail">
+
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <div>
+                                <span>Location</span>
+                                <strong>Damietta, Egypt</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="https://www.linkedin.com/in/amira-kamall"
+                        target="_blank"
+                        class="linkedin-button">
+
+                        <i class="fa-brands fa-linkedin-in"></i>
+
+                        Connect on LinkedIn
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <form class="contact-form" id="contactForm">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Your Email
+                        </label>
+
+                        <input type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Message
+                        </label>
+
+                        <textarea id="message"
+                            placeholder="Tell me about your project..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button type="submit"
+                        class="btn btn-primary submit-btn">
+
+                        Send Message
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= LIGHTBOX ================= -->
+
+    <div class="lightbox" id="lightbox">
+
+        <button class="lightbox-close" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button class="gallery-prev" aria-label="Previous image">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <img id="lightboxImage" src="" alt="Project Image">
+
+        <button class="gallery-next" aria-label="Next image">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="gallery-counter">
+            1 / 5
         </div>
 
-    </section>
+    </div>
 
 
     <!-- ================= FOOTER ================= -->
 
     <footer>
 
-        <p>
-            © 2026 Amira Kamal. All Rights Reserved.
-        </p>
+        <div class="footer-content">
+
+            <a href="#home" class="logo">
+                Amira<span>.</span>
+            </a>
+
+            <p>
+                Building, learning and growing — one project at a time.
+            </p>
+
+            <div class="footer-socials">
+
+                <a href="https://www.linkedin.com/in/amira-kamall"
+                    target="_blank">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+                <a href="mailto:m7264102@gmail.com">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Amira Kamal. All Rights Reserved.
+            </p>
+
+        </div>
 
     </footer>
 
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
