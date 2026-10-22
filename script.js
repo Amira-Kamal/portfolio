@@ -1,511 +1,289 @@
-// =========================================================
+
+// =====================================================
 // AMIRA KAMAL — PORTFOLIO JAVASCRIPT
-// =========================================================
+// =====================================================
 
-
-// =========================================================
 // MOBILE MENU
-// =========================================================
-
 const menuIcon = document.querySelector(".menu-icon");
 const navLinks = document.querySelector(".nav-links");
 
 if (menuIcon && navLinks) {
-
     menuIcon.addEventListener("click", () => {
-
-        navLinks.classList.toggle("active");
+        const isOpen = navLinks.classList.toggle("active");
+        menuIcon.setAttribute("aria-expanded", String(isOpen));
 
         const icon = menuIcon.querySelector("i");
-
-        if (navLinks.classList.contains("active")) {
-
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-        } else {
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        }
-
+        icon.classList.toggle("fa-bars", !isOpen);
+        icon.classList.toggle("fa-xmark", isOpen);
     });
-
-
-    // Close menu after clicking a link
 
     document.querySelectorAll(".nav-links a").forEach(link => {
-
         link.addEventListener("click", () => {
-
             navLinks.classList.remove("active");
+            menuIcon.setAttribute("aria-expanded", "false");
 
             const icon = menuIcon.querySelector("i");
-
             icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
-
         });
-
     });
-
 }
 
-
-// =========================================================
 // NAVBAR SCROLL EFFECT
-// =========================================================
-
 const header = document.querySelector(".header");
 
 function handleHeaderScroll() {
-
-    if (!header) return;
-
-    if (window.scrollY > 50) {
-
-        header.classList.add("scrolled");
-
-    } else {
-
-        header.classList.remove("scrolled");
-
+    if (header) {
+        header.classList.toggle("scrolled", window.scrollY > 50);
     }
-
 }
 
 window.addEventListener("scroll", handleHeaderScroll);
-
 handleHeaderScroll();
 
-
-// =========================================================
-// SCROLL REVEAL ANIMATION
-// =========================================================
-
+// SCROLL REVEAL
 const revealElements = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-
-    (entries, observer) => {
-
+if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
-
                 entry.target.classList.add("show");
-
                 observer.unobserve(entry.target);
-
             }
-
         });
+    }, { threshold: 0.12 });
 
-    },
+    revealElements.forEach(element => revealObserver.observe(element));
+} else {
+    revealElements.forEach(element => element.classList.add("show"));
+}
 
-    {
-        threshold: 0.12
-    }
-
-);
-
-
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-// =========================================================
 // ACTIVE NAVIGATION LINK
-// =========================================================
-
-const sections = document.querySelectorAll("section[id]");
+const sections = document.querySelectorAll("main section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
 
 function updateActiveNav() {
-
     let currentSection = "";
 
     sections.forEach(section => {
-
         const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
+        const sectionBottom = sectionTop + section.offsetHeight;
 
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-
-            currentSection = section.getAttribute("id");
-
+        if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+            currentSection = section.id;
         }
-
     });
-
 
     navItems.forEach(link => {
-
-        link.classList.remove("active");
-
-        const target = link.getAttribute("href");
-
-        if (target === `#${currentSection}`) {
-
-            link.classList.add("active");
-
-        }
-
+        link.classList.toggle("active", link.getAttribute("href") === `#${currentSection}`);
     });
-
 }
 
 window.addEventListener("scroll", updateActiveNav);
-
 updateActiveNav();
 
-
-// =========================================================
-// LIGHTBOX
-// =========================================================
-
+// LIGHTBOX AND GALLERY
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.querySelector(".lightbox-close");
-
-
-// Open Lightbox
+const galleryPrev = document.querySelector(".gallery-prev");
+const galleryNext = document.querySelector(".gallery-next");
+const galleryCounter = document.querySelector(".gallery-counter");
 
 let currentGallery = [];
 let currentImageIndex = 0;
 
-function openLightbox(imagePath, isGallery = false) {
-
+function openLightbox(imagePath, galleryMode = false) {
     if (!lightbox || !lightboxImage) return;
 
     lightboxImage.src = imagePath;
-
     lightbox.classList.add("active");
-
+    lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
-    const prev = document.querySelector(".gallery-prev");
-    const next = document.querySelector(".gallery-next");
-    const counter = document.querySelector(".gallery-counter");
+    const displayMode = galleryMode ? "flex" : "none";
 
-    if (isGallery) {
-
-        if (prev) prev.style.display = "flex";
-        if (next) next.style.display = "flex";
-        if (counter) counter.style.display = "block";
-
-    } else {
-
-        if (prev) prev.style.display = "none";
-        if (next) next.style.display = "none";
-        if (counter) counter.style.display = "none";
-
-    }
+    if (galleryPrev) galleryPrev.style.display = displayMode;
+    if (galleryNext) galleryNext.style.display = displayMode;
+    if (galleryCounter) galleryCounter.style.display = galleryMode ? "block" : "none";
 }
 
 function openGallery(images) {
-
     if (!images || images.length === 0) return;
 
     currentGallery = images;
     currentImageIndex = 0;
 
-    openLightbox(
-        currentGallery[currentImageIndex],
-        true
-    );
-
+    openLightbox(currentGallery[currentImageIndex], true);
     updateGalleryCounter();
 }
-function nextImage() {
 
-    if (currentGallery.length === 0) return;
-
-    currentImageIndex++;
-
-    if (currentImageIndex >= currentGallery.length) {
-        currentImageIndex = 0;
-    }
+function showGalleryImage() {
+    if (!currentGallery.length || !lightboxImage) return;
 
     lightboxImage.src = currentGallery[currentImageIndex];
-
     updateGalleryCounter();
+}
+
+function nextImage() {
+    if (!currentGallery.length) return;
+    currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+    showGalleryImage();
 }
 
 function previousImage() {
-
-    if (currentGallery.length === 0) return;
-
-    currentImageIndex--;
-
-    if (currentImageIndex < 0) {
-        currentImageIndex = currentGallery.length - 1;
-    }
-
-    lightboxImage.src = currentGallery[currentImageIndex];
-
-    updateGalleryCounter();
+    if (!currentGallery.length) return;
+    currentImageIndex =
+        (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+    showGalleryImage();
 }
 
 function updateGalleryCounter() {
-
-    const counter = document.querySelector(".gallery-counter");
-
-    if (!counter) return;
-
-    counter.textContent =
-        `${currentImageIndex + 1} / ${currentGallery.length}`;
+    if (galleryCounter) {
+        galleryCounter.textContent =
+            `${currentImageIndex + 1} / ${currentGallery.length}`;
+    }
 }
 
-
-// Close Lightbox
-
 function closeLightbox() {
-
     if (!lightbox) return;
 
     lightbox.classList.remove("active");
-
+    lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
 
+    if (lightboxImage) lightboxImage.src = "";
 }
 
-
-// =========================================================
-// PROJECT IMAGES
-// =========================================================
-
-document.querySelectorAll(".image-view-btn").forEach(button => {
-
+document.querySelectorAll(".image-view-btn, .certificate-view").forEach(button => {
     button.addEventListener("click", () => {
-
         const imagePath = button.getAttribute("data-image");
-
-        openLightbox(imagePath);
-
+        if (imagePath) openLightbox(imagePath);
     });
-
 });
 
-
-// =========================================================
-// PROJECT GALLERY BUTTON
-// =========================================================
+// Replace these filenames with the exact names of your gallery screenshots.
 
 const galleries = {
-
     library: [
-
         "images/Screenshot 2026-10-01 224101.png",
         "images/Screenshot 2026-10-01 230130.png",
         "images/Screenshot 2026-10-01 230200.png",
         "images/Screenshot 2026-10-01 230225.png"
+    ],
 
+    portfolio: [
+        "images/Screenshot 2026-10-22 204556.jpg",
+        "images/Screenshot 2026-10-22 204612.jpg",
+        "images/Screenshot 2026-10-22 204627.jpg",
+        "images/Screenshot 2026-10-22 204645.jpg",
+        "images/Screenshot 2026-10-22 204709.jpg",
+        "images/Screenshot 2026-10-22 204725.jpg",
+        "images/Screenshot 2026-10-22 204738.jpg"
+  
+    ],
+
+    lms: [
+        "images/Screenshot 2026-10-22 203156.jpg",
+        "images/Screenshot 2026-10-22 203248.jpg",
+        "images/Screenshot 2026-10-22 203327.jpg",
+        "images/Screenshot 2026-10-22 203345.jpg",
+        "images/Screenshot 2026-10-22 203407.jpg",
+        "images/Screenshot 2026-10-22 203505.jpg",
+        "images/Screenshot 2026-10-22 203544.jpg",
+        "images/Screenshot 2026-10-22 203630.jpg"
+       
     ]
-
 };
+
+document.querySelectorAll(".project-gallery-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        const galleryName = button.getAttribute("data-gallery");
+        openGallery(galleries[galleryName]);
+    });
+});
 
 
 document.querySelectorAll(".project-gallery-btn").forEach(button => {
-
     button.addEventListener("click", () => {
-
         const galleryName = button.getAttribute("data-gallery");
-
-        const images = galleries[galleryName];
-
-        openGallery(images);
-
+        openGallery(galleries[galleryName]);
     });
-
 });
 
-
-const galleryNext = document.querySelector(".gallery-next");
-const galleryPrev = document.querySelector(".gallery-prev");
-
-if (galleryNext) {
-    galleryNext.addEventListener("click", nextImage);
-}
-
-if (galleryPrev) {
-    galleryPrev.addEventListener("click", previousImage);
-}
-
-// =========================================================
-// CERTIFICATE IMAGES
-// =========================================================
-
-document.querySelectorAll(".certificate-view").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const imagePath = button.getAttribute("data-image");
-
-        openLightbox(imagePath);
-
-    });
-
-});
-
-
-// =========================================================
-// CLOSE LIGHTBOX
-// =========================================================
-
-if (lightboxClose) {
-
-    lightboxClose.addEventListener("click", closeLightbox);
-
-}
-
-
-// Click outside image
+if (galleryNext) galleryNext.addEventListener("click", nextImage);
+if (galleryPrev) galleryPrev.addEventListener("click", previousImage);
+if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
 
 if (lightbox) {
-
     lightbox.addEventListener("click", event => {
-
-        if (event.target === lightbox) {
-
-            closeLightbox();
-
-        }
-
+        if (event.target === lightbox) closeLightbox();
     });
-
 }
 
-
-// Press ESC to close
-
 document.addEventListener("keydown", event => {
+    if (!lightbox || !lightbox.classList.contains("active")) return;
 
-    if (event.key === "Escape") {
-
-        closeLightbox();
-
-    }
-
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowRight") nextImage();
+    if (event.key === "ArrowLeft") previousImage();
 });
 
-
-// =========================================================
 // CONTACT FORM
-// =========================================================
-
+// This is a front-end demo. It does not send an email without a backend or email service.
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
-
     contactForm.addEventListener("submit", event => {
-
         event.preventDefault();
 
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const message = document.getElementById("message").value.trim();
 
-
         if (!name || !email || !message) {
-
             alert("Please fill in all fields.");
-
             return;
-
         }
 
-
-        alert(
-            `Thank you, ${name}! Your message has been received.`
+        const subject = encodeURIComponent(`Portfolio message from ${name}`);
+        const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
         );
 
-
-        contactForm.reset();
-
+        window.location.href =
+            `mailto:m7264102@gmail.com?subject=${subject}&body=${body}`;
     });
-
 }
 
-
-// =========================================================
 // SMOOTH SCROLL
-// =========================================================
-
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-
     link.addEventListener("click", event => {
-
         const targetId = link.getAttribute("href");
 
-        if (
-            !targetId ||
-            targetId === "#" ||
-            targetId.length <= 1
-        ) {
-            return;
-        }
+        if (!targetId || targetId === "#") return;
 
-
-        const targetElement =
-            document.querySelector(targetId);
-
+        const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-
             event.preventDefault();
-
             targetElement.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
-
         }
-
     });
-
 });
 
-
-// =========================================================
-// IMAGE ERROR HANDLING
-// =========================================================
-
-// This prevents ugly broken-image icons
-// while you haven't added your images yet.
-
+// IMAGE FALLBACK
 document.querySelectorAll("img").forEach(image => {
-
     image.addEventListener("error", () => {
-
-        if (
-            image.closest(".hero-image") ||
-            image.closest(".project-image") ||
-            image.closest(".certificate-image")
-        ) {
-
-            image.style.opacity = "0.15";
-
-        }
-
+        image.classList.add("image-unavailable");
     });
-
 });
 
-
-// =========================================================
 // PAGE LOADED
-// =========================================================
-
 window.addEventListener("load", () => {
-
     document.body.classList.add("loaded");
-
 });
